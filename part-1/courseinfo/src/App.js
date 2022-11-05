@@ -32,7 +32,7 @@ const Content = ({ parts }) =>
     
     var result = parts.reduce(function (acc, obj) { return acc + obj.exercises; }, 0);
     
-    return(<p>Total exercices: {result}</p>)
+    return(<p>Total exercices : {result}</p>)
 
   }
 
