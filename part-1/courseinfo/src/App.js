@@ -1,36 +1,48 @@
 const App = () => {
-  const now = new Date()
-  const a = 10
-  const b = 20
-  const name = "James Bond"
-  const agent = "007"
+  const course = {
+    name: 'Half Stack application development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
+
+  const Header = (name) => {
+   
+    return <h1>{course.name}</h1>
+  }
+
+const Content = ({ parts }) =>
+  parts.map((part,i) => (
+    <p key={i}> Name: {part.name} <br/> exercises: {part.exercises}</p>
+  ));
+
+
+  const Total = ({ parts }) => {
+    
+    var result = parts.reduce(function (acc, obj) { return acc + obj.exercises; }, 0);
+    
+    return(<p>Total exercices: {result}</p>)
+
+  }
 
   return (
-    <>
-      <p>Hello world, it is {now.toString()}</p>
-      <br/>
-      <p>
-        {a} plus {b} is {a+b}
-      </p>
-      <Hello name={name} agent={agent}/>
-      <Hello name="James Bond" agent="007"/>
-      <Footer/>
-    </>
-  )
-}
-const Hello = (props) => {
-return (
-  <>
-    <p>Hello mr {props.name} aka {props.agent}</p>
-  </>
-)
-}
-const Footer = (props) => {
-  return (
-    <>
-    <p><strong>REACT COMPONENTS SHOULD ALWAYS BE CAPITALISED!</strong></p>
-  </>
+    <div>
+      <Header name={course}/>
+      <Content  parts={course.parts}/>
+      <Total parts={course.parts}/>
+  </div>
   )
 }
 
-export default App;
+export default App
