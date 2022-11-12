@@ -51,6 +51,8 @@ const Content = ({ parts }) =>
       <Total parts={course.parts}/>
   </div>
   )
+
+  
 }
 
 export default App
