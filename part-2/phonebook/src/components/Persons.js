@@ -1,10 +1,17 @@
 import React from 'react'
+const Persons = ({value,remove}) => {
 
-const Persons = ({value}) => {
-  console.log(value)
+
   return (
     <>
-{value.map(person => <h5 key={person.id}>{person.name} : {person.number}</h5>)}
+{value.map(person => <h5 key={person.id}>{person.name} : {person.number} <button onClick={
+  ()=>
+  {
+    if (window.confirm(`Are you sure you want to delete ${person.name} ?`)) {
+      remove(person)
+    }
+}}
+>delete</button></h5>)}
     </>
   )
 }
