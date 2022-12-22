@@ -1,0 +1,25 @@
+POST http://localhost:3003/api/blogs HTTP/1.1
+content-type: application/json
+
+{
+  "title": "arissala",
+  "author": "idk",
+  "url": "arissala.com",
+  "likes": 43
+}
+###
+
+DELETE http://localhost:3003/api/blogs/639ef588c6cb7831f049690f HTTP/1.1
+
+###
+
+PUT http://localhost:3003/api/blogs/638fb28c13097f4c2e40d611 HTTP/1.1
+
+content-type: application/json
+
+{
+  "title": "arissala",
+  "author": "idk",
+  "url": "arissala.com",
+  "likes": 9999999
+}
